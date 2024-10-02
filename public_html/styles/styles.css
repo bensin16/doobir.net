@@ -1,0 +1,225 @@
+:root {
+    /* source: https://goblin-heart.net/sadgrl/webmastery/downloads/tiledbgs */
+    --body-bg-image: url('../images/stars3-slow.gif');
+    --body-bg-image-size: 256px;
+}
+
+html {
+    background-image: var(--body-bg-image);
+    background-attachment: fixed;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #08031A;
+    background-image: var(--body-bg-image);
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    max-width: 1200px;
+    /* this is the width of your layout! */
+    /* if you change the above value, scroll to the bottom
+and change the media query according to the comment! */
+    margin: 0 auto;
+    /* this centers the entire page */
+    border: 2px solid #000000;
+
+}
+
+/* the area below is for all links on your page
+EXCEPT for the navigation */
+#container a {
+    color: #939fc3;
+    font-weight: bold;
+    /* if you want to remove the underline
+you can add a line below here that says:
+text-decoration:none; */
+}
+
+header {
+    width: 100%;
+    /* background-color: #5e4e8c; */
+    /* background-color: rgb(8, 1, 14); */
+    /* header color here! */
+    height: 280px;
+    /* this is only for a background image! */
+    /* if you want to put images IN the header, 
+you can add them directly to the <div id="header"></div> element! */
+    /* background-image: var(--header-image); */
+    /* background-repeat: repeat; */
+    background-size: 100%;
+}
+
+#header {
+    padding-top: 50px;
+    /* This height = header - navbar.height */
+    height: 240px; 
+    background-size: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+img {
+    position: relative;
+    top:0;
+    left:0;
+    animation: spin 3s infinite linear;
+}
+@keyframes spin {
+    0% {
+        rotate: 0deg
+    }
+    25% {
+        rotate: 90deg
+    }
+    50% {
+        rotate: 180deg
+    }
+    75% {
+        rotate: 270deg
+    }
+    100% {
+        rotate: 360deg
+    }
+}
+
+/* navigation section!! */
+#navbar {
+    height: 40px;
+    width: 100%;
+
+    background-color: #13092D;
+    /* navbar color */
+    width: 100%;
+}
+
+#navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+#navbar li {
+    padding-top: 10px;
+}
+
+/* navigation links*/
+#navbar li a {
+    color: #e7e9f2;
+    /* navbar text color */
+    font-weight: 800;
+    text-decoration: none;
+    /* this removes the underline */
+}
+
+/* navigation link when a link is hovered over */
+#navbar li a:hover {
+    color: #a49cba;
+    text-decoration: underline;
+}
+
+#flex {
+    display: flex;
+}
+
+aside {
+    color:whitesmoke;
+    background-color: #241445;
+    width: 200px;
+    padding: 20px;
+    font-size: smaller;
+    border: 2px solid black;
+    /* this makes the sidebar text slightly smaller */
+}
+
+#rightSidebar {
+    background: rgba(0,0,0,0.5);
+}
+
+/* this is the color of the main content area,
+between the sidebars! */
+main {
+    color:whitesmoke;
+    background-color: #43256E;
+    flex: 1;
+    padding: 20px;
+    order: 2;
+    border: 2px solid black;
+    margin: 5px;
+}
+. {
+    background-image: var(--body-bg-image);
+    background-attachment: fixed;
+    background-size: var(--body-bg-image-size) var(--body-bg-image-size);
+}
+
+/* what's this "order" stuff about??
+allow me to explain!
+if you're using both sidebars, the "order" value
+tells the CSS the order in which to display them.
+left sidebar is 1, content is 2, and right sidebar is 3! */
+
+#leftSidebar {
+    order: 1;
+    margin: 5px;
+}
+
+#rightSidebar {
+    order: 3;
+}
+
+footer {
+    background-color: #13092D;
+    /* background color for footer */
+    color:#e7e9f2;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    /* this centers the footer text */
+}
+
+.box {
+    background-color: #13092D;
+    border: 1px solid #939fc3;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 1100px) {
+    #flex {
+        flex-wrap: wrap;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    /* the order of the items is adjusted here for responsiveness!
+since the sidebars would be too small on a mobile device.
+feel free to play around with the order!
+*/
+    main {
+        order: 1;
+    }
+
+    #leftSidebar {
+        order: 2;
+    }
+
+    #rightSidebar {
+        order: 3;
+    }
+
+    #navbar ul {
+        flex-wrap: wrap;
+    }
+}
